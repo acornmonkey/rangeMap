@@ -6,3 +6,5 @@ iNaturalist already has a feature like this (Show taxon children). But this func
 Another improvement is the abbreviation of multiword names. If you are looking at the range map for a genus, it's redundant to include the genus name in every species, and quite frankly, it's bad for accessibility given that you can only see around 11 characters in a query name without scrolling. So if you run rangeMap(54297), "Citrus × limon" becomes just "× limon" and "Citrus trifoliata" becomes just "trifoliata".
 
 For some reason, even though this function specifies the Categorical colour scheme, colours aren't assigned to queries until you do something, like edit the query name or query or select a colour scheme again.
+
+When using this function, you should make sure you are a compatible page, such as an offline page or an iNaturalist site, as otherwise the required request to iNaturalist will be blocked by the document's Content Security Policy. Chrome's new tab page is not compatible.
