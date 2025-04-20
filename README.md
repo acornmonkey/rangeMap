@@ -7,4 +7,4 @@ Another improvement is the abbreviation of multiword names. If you are looking a
 
 For some reason, even though this function specifies the Categorical colour scheme, colours aren't assigned to queries until you do something, like edit the query name or query or select a colour scheme again.
 
-When using this function, you should make sure you are a compatible page, such as an offline page or an iNaturalist site, as otherwise the required request to iNaturalist will be blocked by the document's Content Security Policy. Chrome's new tab page is not compatible.
+When using this function, you should make sure you are a compatible page, such as an offline page or an iNaturalist site, as otherwise the request to the iNaturalist API will be blocked by the document's Content Security Policy. Chrome's new tab page is not compatible.
