@@ -12,12 +12,12 @@ async function rangeMap(parent,extra) {
 		if ( !children[i].name.includes('×') || (children[i].name[0]==='×' && wordCount===3) ) {
 			children[i].name=nameArray[wordCount-1];
 		} else if (wordCount===5 && nameArray[3]==='×') {
-			children[i]=nameArray[2] + ' × ' + nameArray[4];
+			children[i].name=nameArray[2] + ' × ' + nameArray[4];
 		} else if (wordCount>=3 && wordCount<=6 && wordCount!==5) {
-			children[i]=nameArray[1] + ' ' + nameArray[2];
+			children[i].name=nameArray[1] + ' ' + nameArray[2];
 			for (let j=3;j<wordCount;j++) {
-				children[i]+=' ';
-				children[i]+=nameArray[j];
+				children[i].name+=' ';
+				children[i].name+=nameArray[j];
 			}
 		}
 		sObj.queries[i].name=String.fromCharCode.apply(null,new TextEncoder().encode(children[i].name));
