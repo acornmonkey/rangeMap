@@ -7,6 +7,7 @@ async function rangeMap(parent,extra) {
 	}
 	for (let i=0;i<children.length;i++) {
 		sObj.queries.push({});
+		//if (children[i].name.includes("×")) {
 		sObj.queries[i].name=String.fromCharCode.apply(null,new TextEncoder().encode(children[i].name));
 		sObj.queries[i].params='taxon_id='+children[i].id+extra;
 	}
