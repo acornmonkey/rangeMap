@@ -13,7 +13,7 @@ async function rangeMap(parent,extra) {
 			children[i].name=nameArray[wordCount-1];
 		} else if (wordCount===5 && nameArray[3]==='×') {
 			children[i]=nameArray[2] + ' × ' + nameArray[4];
-		} else if (wordCount>==3 && wordCount<==6 && wordCount!==5) {
+		} else if (wordCount>=3 && wordCount<=6 && wordCount!==5) {
 			children[i]=nameArray[1] + ' ' + nameArray[2];
 			for (let j=3;j<wordCount;j++) {
 				children[i]+=' ';
