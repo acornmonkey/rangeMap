@@ -1,3 +1,12 @@
+function triadic(n) {
+	const m = Math.floor(n/3);
+	const c = n%3;
+	const ceilog = Math.ceil(Math.log2(m+1));
+	const h = ((2*(m-ceilog)+1)/2**ceilog+c)*120;
+	const s = 100
+	const l = 50;
+	return 'hsl(' + h + ',' + s + '%,' + l + '%)';
+}
 async function rangeMap(parent,extra,colFunc,colArgs) {
 	const parentInfo=await (await fetch('https://api.inaturalist.org/v1/taxa/'+parent)).json();
 	const children=parentInfo.results[0].children;
