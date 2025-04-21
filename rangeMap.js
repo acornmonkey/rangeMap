@@ -23,8 +23,8 @@ async function rangeMap(parent,extra,colFunc,colArgs) {
 		sObj.queries[i].name=String.fromCharCode.apply(null,new TextEncoder().encode(children[i].name));
 		sObj.queries[i].params='taxon_id='+children[i].id+extra;
 		if (colFunc!=null) {
-			if (colArg!=null) {
-				sObj.queries[i].color=colFunc(i,...colArg);
+			if (colArgs!=null) {
+				sObj.queries[i].color=colFunc(i,...colArgs);
 			} else {
 				sObj.queries[i].color=colFunc(i);
 			}
