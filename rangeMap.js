@@ -1,4 +1,4 @@
-async function rangeMap(parent,extra) {
+async function rangeMap(parent,extra,colFunc,colArgs) {
 	const parentInfo=await (await fetch('https://api.inaturalist.org/v1/taxa/'+parent)).json();
 	const children=parentInfo.results[0].children;
 	const sObj={queries:[],tab:"map",taxonFrequenciesSortOrder:"asc",colorScheme:"categorical"};
@@ -22,6 +22,13 @@ async function rangeMap(parent,extra) {
 		}
 		sObj.queries[i].name=String.fromCharCode.apply(null,new TextEncoder().encode(children[i].name));
 		sObj.queries[i].params='taxon_id='+children[i].id+extra;
+		if (colFunc!=null) {
+			if (colArg!=null) {
+				sObj.queries[i].color=colFunc(i,..colArg);
+			} else {
+				sObj.queries[i].color=colFunc(i);
+			}
+		}
 	}
 	const base64=encodeURIComponent(btoa(JSON.stringify(sObj)));
 	const url='https://www.inaturalist.org/observations/compare?s='+base64;
