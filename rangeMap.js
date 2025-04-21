@@ -5,7 +5,7 @@ function kadic(n,k,r) {
 	const h = ((2*(m-ceilog)+1)/2**ceilog+c)*360/k;
 	const s = 100-Math.floor(n/r/3)%2*50;
 	const l = 75-Math.floor(n/r)%3*25;
-	return 'hsl(' + h + ',' + s + '%,' + l + '%)';
+	return 'hsl(' + h + ' ' + s + ' ' + l + ')';
 }
 async function rangeMap(parent,extra,colFunc,colArgs) {
 	const parentInfo=await (await fetch('https://api.inaturalist.org/v1/taxa/'+parent)).json();
