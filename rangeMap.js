@@ -1,10 +1,11 @@
 function triadic(n) {
-	const m = Math.floor(n/3);
-	const c = n%3;
+function kadic(n,k,r) {
+	const m = Math.floor(n/k);
+	const c = n%k;
 	const ceilog = Math.ceil(Math.log2(m+1));
-	const h = ((2*(m-ceilog)+1)/2**ceilog+c)*120;
-	const s = 100
-	const l = 50;
+	const h = ((2*(m-ceilog)+1)/2**ceilog+c)*360/k;
+	const s = 100-Math.floor(n/r/3)%2*50;
+	const l = 75-Math.floor(n/r)%3*25;
 	return 'hsl(' + h + ',' + s + '%,' + l + '%)';
 }
 async function rangeMap(parent,extra,colFunc,colArgs) {
