@@ -1,4 +1,3 @@
-function triadic(n) {
 function kadic(n,k,r) {
 	const m = Math.floor(n/k);
 	const c = n%k;
