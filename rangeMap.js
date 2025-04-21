@@ -24,7 +24,7 @@ async function rangeMap(parent,extra,colFunc,colArgs) {
 		sObj.queries[i].params='taxon_id='+children[i].id+extra;
 		if (colFunc!=null) {
 			if (colArg!=null) {
-				sObj.queries[i].color=colFunc(i,..colArg);
+				sObj.queries[i].color=colFunc(i,...colArg);
 			} else {
 				sObj.queries[i].color=colFunc(i);
 			}
