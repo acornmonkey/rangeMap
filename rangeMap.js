@@ -7,6 +7,9 @@ function kadic(n,k,r) {
 	const l = 75-Math.floor(n/r)%3*25;
 	return 'hsl(' + h + ',' + s + '%,' + l + '%)';
 }
+function threeDigit(n, o) {
+	return `#${(n * o % 4096).toString(16).padStart(3, '0')}`;
+}
 async function rangeMap(parent,extra,colFunc,colArgs) {
 	const parentInfo=await (await fetch('https://api.inaturalist.org/v1/taxa/'+parent)).json();
 	const children=parentInfo.results[0].children;
