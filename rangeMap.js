@@ -10,13 +10,10 @@ function kadic(n,k,r) {
 function threeDigit(n, o) {
 	return `#${(n * o % 4096).toString(16).padStart(3, '0')}`;
 }
-async function rangeMap(parent,extra,colFunc,colArgs) {
+async function rangeMap(parent,extra='',colFunc,colArgs) {
 	const parentInfo=await (await fetch('https://api.inaturalist.org/v1/taxa/'+parent)).json();
 	const children=parentInfo.results[0].children;
 	const sObj={queries:[],tab:"map",taxonFrequenciesSortOrder:"asc",colorScheme:"categorical"};
-	if (extra==null) {
-		extra='';
-	}
 	for (let i=0;i<children.length;i++) {
 		sObj.queries.push({});
 		let nameArray=children[i].name.split(' ');
